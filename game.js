@@ -281,3 +281,136 @@ function animate(){
 
 animate();
 
+// =========================================
+// Part 3 - Pipes + Score + Collision
+// =========================================
+
+function createPipe(){
+
+    let topHeight=Math.random()*220+60;
+
+    pipes.push({
+
+        x:WIDTH,
+
+        top:topHeight,
+
+        bottom:topHeight+PIPE_GAP,
+
+        passed:false
+
+    });
+
+}
+
+function updatePipes(){
+
+    if(!running) return;
+
+    if(frame%120===0){
+
+        createPipe();
+
+    }
+
+    for(let i=pipes.length-1;i>=0;i--){
+
+        let p=pipes[i];
+
+        p.x-=PIPE_SPEED;
+
+        // Score
+        if(!p.passed && p.x+PIPE_WIDTH<bird.x){
+
+            p.passed=true;
+
+            score++;
+
+            scoreEl.innerText=score;
+
+            if(score>highScore){
+
+                highScore=score;
+
+                localStorage.setItem("flappyHigh",highScore);
+
+                highScoreEl.innerText=highScore;
+
+            }
+
+        }
+
+        // Collision
+        if(
+
+            bird.x+bird.width>p.x &&
+            bird.x<p.x+PIPE_WIDTH &&
+            (bird.y<p.top ||
+             bird.y+bird.height>p.bottom)
+
+        ){
+
+            running=false;
+
+            gameOver=true;
+
+            startBtn.innerText="🔄 PLAY AGAIN";
+
+            startBtn.style.display="inline-block";
+
+        }
+
+        // Remove old pipe
+        if(p.x<-PIPE_WIDTH){
+
+            pipes.splice(i,1);
+
+        }
+
+    }
+
+}
+
+function drawPipes(){
+
+    pipes.forEach(p=>{
+
+        ctx.fillStyle="#8A2BE2";
+
+        // Top
+        ctx.fillRect(
+            p.x,
+            0,
+            PIPE_WIDTH,
+            p.top
+        );
+
+        // Bottom
+        ctx.fillRect(
+            p.x,
+            p.bottom,
+            PIPE_WIDTH,
+            HEIGHT-p.bottom-40
+        );
+
+        // Pipe caps
+        ctx.fillStyle="#B56CFF";
+
+        ctx.fillRect(
+            p.x-5,
+            p.top-18,
+            PIPE_WIDTH+10,
+            18
+        );
+
+        ctx.fillRect(
+            p.x-5,
+            p.bottom,
+            PIPE_WIDTH+10,
+            18
+        );
+
+    });
+
+}
+
