@@ -16,6 +16,7 @@ color:white;
 }
 
 .container{
+position:relative;
 width:100%;
 max-width:470px;
 text-align:center;
@@ -70,4 +71,45 @@ box-shadow:0 0 30px #8A2BE2;
 }
 
 #startBtn{
-margin-top:20
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:240px;
+
+height:70px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:24px;
+
+font-weight:700;
+
+background:linear-gradient(135deg,#8A2BE2,#B56CFF);
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 0 30px rgba(138,43,226,.8);
+
+transition:.3s;
+
+z-index:100;
+
+}
+
+#startBtn:hover{
+
+transform:translate(-50%,-50%) scale(1.08);
+
+box-shadow:0 0 40px rgba(181,108,255,1);
+
+}
