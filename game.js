@@ -156,3 +156,128 @@ function drawBird(){
     ctx.restore();
 
 }
+
+// =========================================
+// Part 2 - Physics + Background + Game Loop
+// =========================================
+
+// Sky Background
+function drawBackground(){
+
+    let sky = ctx.createLinearGradient(0,0,0,HEIGHT);
+
+    sky.addColorStop(0,"#1a0033");
+    sky.addColorStop(.5,"#32005e");
+    sky.addColorStop(1,"#0b0018");
+
+    ctx.fillStyle=sky;
+    ctx.fillRect(0,0,WIDTH,HEIGHT);
+
+    // Stars
+    ctx.fillStyle="white";
+
+    for(let i=0;i<40;i++){
+
+        ctx.globalAlpha=.7;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            (i*37)%WIDTH,
+            (i*83+frame*.2)%HEIGHT,
+            1.5,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fill();
+
+    }
+
+    ctx.globalAlpha=1;
+
+}
+
+// Ground
+function drawGround(){
+
+    ctx.fillStyle="#3d1b5f";
+
+    ctx.fillRect(0,HEIGHT-40,WIDTH,40);
+
+    ctx.fillStyle="#00ff99";
+
+    ctx.fillRect(0,HEIGHT-40,WIDTH,5);
+
+}
+
+// Bird Physics
+function updateBird(){
+
+    if(!running) return;
+
+    bird.velocity+=bird.gravity;
+
+    bird.y+=bird.velocity;
+
+    bird.rotation=Math.min(bird.velocity*.08,.7);
+
+    // Ceiling
+
+    if(bird.y<0){
+
+        bird.y=0;
+
+        bird.velocity=0;
+
+    }
+
+    // Ground
+
+    if(bird.y+bird.height>=HEIGHT-40){
+
+        gameOver=true;
+
+        running=false;
+
+        startBtn.innerText="🔄 PLAY AGAIN";
+
+        startBtn.style.display="inline-block";
+
+    }
+
+}
+
+// Render
+function render(){
+
+    drawBackground();
+
+    drawGround();
+
+    drawBird();
+
+}
+
+// Update
+function update(){
+
+    frame++;
+
+    updateBird();
+
+}
+
+// Main Loop
+function animate(){
+
+    update();
+
+    render();
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
