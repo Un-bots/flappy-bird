@@ -265,6 +265,7 @@ function update(){
     frame++;
 
     updateBird();
+    updatePipes();
 
 }
 
