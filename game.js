@@ -528,3 +528,38 @@ function drawParticles(){
 }
 
 
+
+// =========================================
+// Part 5 - UI Polish
+// =========================================
+
+function drawGameOver(){
+
+    if(!gameOver) return;
+
+    ctx.fillStyle="rgba(0,0,0,.65)";
+    ctx.fillRect(0,0,WIDTH,HEIGHT);
+
+    ctx.fillStyle="#ffffff";
+    ctx.textAlign="center";
+
+    ctx.font="bold 42px Orbitron";
+    ctx.fillText("GAME OVER",WIDTH/2,220);
+
+    ctx.font="24px Poppins";
+    ctx.fillText("Score : "+score,WIDTH/2,270);
+
+    ctx.fillText("Best : "+highScore,WIDTH/2,310);
+
+}
+
+const oldRender = render;
+
+render = function(){
+
+    oldRender();
+
+    drawGameOver();
+
+}
+
