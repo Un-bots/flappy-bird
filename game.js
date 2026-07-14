@@ -268,6 +268,13 @@ function update(){
 
     updateBird();
     updatePipes();
+    updateParticles();
+
+if(running && frame%5===0){
+
+    spawnParticles();
+
+}
 
 }
 
