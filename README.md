@@ -27,15 +27,15 @@ A modern Flappy Bird game built with HTML, CSS, and JavaScript. Fly through the 
 <p align="center">
 
 <a href="https://github.com/Un-bots/Flappy-bird">
-<img src="https://img.shields.io/github/stars/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Stars&color=8A2BE2">
+<img src="https://img.shields.io/github/stars/Un-bots/Flappy-bird?style=for-the-badge&logo=github&label=Stars&color=8A2BE2">
 </a>
 
 <a href="https://github.com/Un-bots/Flappy-bird/network/members">
-<img src="https://img.shields.io/github/forks/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Forks&color=8A2BE2">
+<img src="https://img.shields.io/github/forks/Un-bots/Flappy-bird?style=for-the-badge&logo=github&label=Forks&color=8A2BE2">
 </a>
 
 <a href="https://github.com/Un-bots/Flappy-bird/issues">
-<img src="https://img.shields.io/github/issues/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Issues&color=8A2BE2">
+<img src="https://img.shields.io/github/issues/Un-bots/Flappy-bird?style=for-the-badge&logo=github&label=Issues&color=8A2BE2">
 </a>
 
 </p>
