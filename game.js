@@ -182,3 +182,43 @@ function update(){
         }
 
 
+function createPipe(){
+
+    let topHeight = Math.random() * 220 + 60;
+
+    pipes.push({
+
+        x: WIDTH,
+
+        top: topHeight,
+
+        bottom: topHeight + GAP,
+
+        passed: false
+
+    });
+
+}
+
+function drawPipes(){
+
+    ctx.fillStyle = "#8A2BE2";
+
+    pipes.forEach(pipe=>{
+
+        // Top Pipe
+        ctx.fillRect(pipe.x,0,PIPE_WIDTH,pipe.top);
+
+        // Bottom Pipe
+        ctx.fillRect(
+            pipe.x,
+            pipe.bottom,
+            PIPE_WIDTH,
+            HEIGHT-pipe.bottom
+        );
+
+    });
+
+}
+
+    
