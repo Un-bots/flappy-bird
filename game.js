@@ -255,6 +255,8 @@ function render(){
 
     drawGround();
 
+    drawPipes();
+
     drawBird();
 
 }
