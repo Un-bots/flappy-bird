@@ -417,3 +417,107 @@ function drawPipes(){
 
 }
 
+
+// =========================================
+// Part 4 - Clouds + Particles + Better Bird
+// =========================================
+
+let clouds = [
+
+    {x:50,y:70,s:1},
+
+    {x:220,y:140,s:1.3},
+
+    {x:360,y:90,s:.9}
+
+];
+
+function drawClouds(){
+
+    ctx.fillStyle="rgba(255,255,255,.15)";
+
+    clouds.forEach(c=>{
+
+        c.x-=0.3*c.s;
+
+        if(c.x<-80){
+
+            c.x=WIDTH+80;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(c.x,c.y,20*c.s,0,Math.PI*2);
+
+        ctx.arc(c.x+20,c.y-8,18*c.s,0,Math.PI*2);
+
+        ctx.arc(c.x+42,c.y,20*c.s,0,Math.PI*2);
+
+        ctx.fill();
+
+    });
+
+}
+
+function spawnParticles(){
+
+    particles.push({
+
+        x:bird.x+10,
+
+        y:bird.y+10,
+
+        dx:(Math.random()-.5)*3,
+
+        dy:(Math.random()-.5)*3,
+
+        life:25
+
+    });
+
+}
+
+function updateParticles(){
+
+    for(let i=particles.length-1;i>=0;i--){
+
+        let p=particles[i];
+
+        p.x+=p.dx;
+
+        p.y+=p.dy;
+
+        p.life--;
+
+        if(p.life<=0){
+
+            particles.splice(i,1);
+
+        }
+
+    }
+
+}
+
+function drawParticles(){
+
+    ctx.fillStyle="#B56CFF";
+
+    particles.forEach(p=>{
+
+        ctx.globalAlpha=p.life/25;
+
+        ctx.beginPath();
+
+        ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+        ctx.fill();
+
+    });
+
+    ctx.globalAlpha=1;
+
+}
+
+
