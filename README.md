@@ -14,11 +14,11 @@ A modern Flappy Bird game built with HTML, CSS, and JavaScript. Fly through the 
 
 <p align="center">
 
-<a href="https://un-bots.github.io/flappybird/">
+<a href="https://un-bots.github.io/flappy-bird/">
 <img src="https://img.shields.io/badge/▶%20PLAY%20GAME-8A2BE2?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
-<a href="https://github.com/Un-bots/FlappyBird">
+<a href="https://github.com/Un-bots/Flappy-bird">
 <img src="https://img.shields.io/badge/⭐%20STAR%20REPOSITORY-black?style=for-the-badge&logo=github">
 </a>
 
@@ -26,15 +26,15 @@ A modern Flappy Bird game built with HTML, CSS, and JavaScript. Fly through the 
 
 <p align="center">
 
-<a href="https://github.com/Un-bots/FlappyBird">
+<a href="https://github.com/Un-bots/Flappy-bird">
 <img src="https://img.shields.io/github/stars/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Stars&color=8A2BE2">
 </a>
 
-<a href="https://github.com/Un-bots/FlappyBird/network/members">
+<a href="https://github.com/Un-bots/Flappy-bird/network/members">
 <img src="https://img.shields.io/github/forks/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Forks&color=8A2BE2">
 </a>
 
-<a href="https://github.com/Un-bots/FlappyBird/issues">
+<a href="https://github.com/Un-bots/Flappy-bird/issues">
 <img src="https://img.shields.io/github/issues/Un-bots/FlappyBird?style=for-the-badge&logo=github&label=Issues&color=8A2BE2">
 </a>
 
@@ -66,20 +66,6 @@ A modern Flappy Bird game built with HTML, CSS, and JavaScript. Fly through the 
 | Mobile | Tap Screen |
 | Restart | Play Again |
 
----
-
-# 📂 Project Structure
-
-```text
-FlappyBird/
-│
-├── index.html
-├── style.css
-├── game.js
-├── images/
-├── sounds/
-└── README.md
-```
 
 ---
 
