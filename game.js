@@ -91,3 +91,94 @@ startBtn.onclick=()=>{
     startBtn.style.display="none";
 
 };
+
+
+function drawBird(){
+
+    ctx.save();
+
+    ctx.translate(bird.x + bird.width/2, bird.y + bird.height/2);
+
+    ctx.rotate(bird.velocity * 0.05);
+
+    // Body
+    ctx.fillStyle = "#8A2BE2";
+
+    ctx.beginPath();
+
+    ctx.ellipse(0,0,18,14,0,0,Math.PI*2);
+
+    ctx.fill();
+
+    // Wing
+    ctx.fillStyle = "#B56CFF";
+
+    ctx.beginPath();
+
+    ctx.ellipse(-3,2,8,6,-0.5,0,Math.PI*2);
+
+    ctx.fill();
+
+    // Eye
+    ctx.fillStyle="white";
+
+    ctx.beginPath();
+
+    ctx.arc(8,-4,3,0,Math.PI*2);
+
+    ctx.fill();
+
+    ctx.fillStyle="black";
+
+    ctx.beginPath();
+
+    ctx.arc(9,-4,1.2,0,Math.PI*2);
+
+    ctx.fill();
+
+    // Beak
+    ctx.fillStyle="#FFD54F";
+
+    ctx.beginPath();
+
+    ctx.moveTo(16,0);
+
+    ctx.lineTo(24,-3);
+
+    ctx.lineTo(24,3);
+
+    ctx.closePath();
+
+    ctx.fill();
+
+    ctx.restore();
+
+}
+
+function update(){
+
+    if(running){
+
+        bird.velocity += bird.gravity;
+
+        bird.y += bird.velocity;
+
+        if(bird.y < 0){
+
+            bird.y = 0;
+
+            bird.velocity = 0;
+
+        }
+
+        if(bird.y + bird.height > HEIGHT){
+
+            running = false;
+
+            startBtn.innerText = "🔄 PLAY AGAIN";
+
+            startBtn.style.display = "inline-block";
+
+        }
+
+
