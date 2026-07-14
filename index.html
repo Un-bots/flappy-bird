@@ -1,1 +1,52 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🐦 Flappy Bird</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🐦 Flappy Bird</h1>
+
+<div class="hud">
+
+<div class="card">
+<h3>Score</h3>
+<p id="score">0</p>
+</div>
+
+<div class="card">
+<h3>High Score</h3>
+<p id="highscore">0</p>
+</div>
+
+</div>
+
+<canvas id="gameCanvas" width="400" height="600"></canvas>
+
+<button id="startBtn">▶ PLAY</button>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+
+</html>
