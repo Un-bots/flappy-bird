@@ -159,6 +159,40 @@ function update(){
 
     if(running){
 
+        frame++;
+
+if(frame % 120 === 0){
+
+    createPipe();
+
+}
+
+pipes.forEach(pipe=>{
+
+    pipe.x -= SPEED;
+
+    if(!pipe.passed && pipe.x + PIPE_WIDTH < bird.x){
+
+        pipe.passed = true;
+
+        score++;
+
+        scoreText.innerText = score;
+
+        if(score > highScore){
+
+            highScore = score;
+
+            localStorage.setItem("flappyHigh",highScore);
+
+            highText.innerText = highScore;
+
+        }
+
+    }
+
+});
+
         bird.velocity += bird.gravity;
 
         bird.y += bird.velocity;
