@@ -53,8 +53,7 @@ A modern Flappy Bird game built with HTML, CSS, and JavaScript. Fly through the 
 - 📱 Mobile Friendly
 - 💻 Desktop Support
 - 🌌 Neon Purple Theme
-- ⚡ Lightweight & Fast
-- 🎮 Easy Controls
+- ⚡ Lightweight & Fasty
 
 ---
 
